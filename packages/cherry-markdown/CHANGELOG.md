@@ -1,5 +1,11 @@
 # Change Log
 
+## 0.9.2
+
+### Patch Changes
+
+- test: vserion [@RSS1102](https://github.com/RSS1102)([`c5be15f`](https://github.com/vegetables-school/cherry-markdown-test-1/commit/c5be15fc916a7da3e82b29cee9b85c63554c596f))
+
 ## 0.9.1
 
 ### Patch Changes
