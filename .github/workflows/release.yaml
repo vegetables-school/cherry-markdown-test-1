@@ -41,7 +41,7 @@ jobs:
  
   build-core-release:
     needs: release
-    if: ${{ contains(needs.release.outputs.publishedPackages, '"name":"cherry-markdown"') }}
+    if: ${{ contains(needs.release.outputs.publishedPackages, '"name":"cherry-markdown-test"') }}
     uses: ./.github/workflows/release-cherry-markdown-build.yaml
     secrets: inherit
 
