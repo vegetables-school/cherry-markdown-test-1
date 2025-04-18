@@ -39,18 +39,18 @@ jobs:
           echo "publishedPackages: ${{ steps.changesets.outputs.publishedPackages }}"
           echo "clientVersion: $clientVersion"
  
-  build-core-release:
-    needs: release
-    if: ${{ contains(needs.release.outputs.publishedPackages, '"name":"cherry-markdown-test"') }}
-    uses: ./.github/workflows/release-cherry-markdown-build.yaml
-    secrets: inherit
-
-  # build-client-release:
+  # build-core-release:
   #   needs: release
-  #   if: ${{ contains(needs.release.outputs.publishedPackages, '"name":"@cherry-markdown/client"') }}
-  #   uses: ./.github/workflows/release-client-build.yaml
-  #   with:
-  #     client_version: ${{ needs.release.outputs.publishedClientVersion }}
+  #   if: ${{ contains(needs.release.outputs.publishedPackages, '"name":"cherry-markdown-test"') }}
+  #   uses: ./.github/workflows/release-cherry-markdown-build.yaml
+  #   secrets: inherit
+
+  build-client-release:
+    needs: release
+    if: ${{ contains(needs.release.outputs.publishedPackages, '"name":"@cherry-markdown/client"') }}
+    uses: ./.github/workflows/release-client-build.yaml
+    with:
+      client_version: ${{ needs.release.outputs.publishedClientVersion }}
 
   # build-vscodePlugin-release:
   #   needs: release

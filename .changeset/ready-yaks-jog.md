@@ -1,5 +1,5 @@
 ---
-'cherry-markdown-test': patch
+'cherry-markdown-vscode-plugin': patch
 ---
 
 test: vserion
